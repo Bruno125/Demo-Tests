@@ -1,6 +1,6 @@
 package com.brunoaybar.demotests
 
-data class Movie(val name: String)
+data class Movie(val id: String, val name: String)
 
 interface MovieRepository{
 
@@ -9,13 +9,16 @@ interface MovieRepository{
     }
 
     fun getSimpleMovie(callback: Callback)
-
+    fun getMovieDetail(id: String, callback: Callback)
 }
 
 class FandangoMovieRepo : MovieRepository{
+    override fun getMovieDetail(id: String, callback: MovieRepository.Callback) {
+        callback.onCompleted(Movie("1","test"))
+    }
 
     override fun getSimpleMovie(callback: MovieRepository.Callback) {
-        callback.onCompleted(Movie("test"))
+        callback.onCompleted(Movie("1","test"))
     }
 
 }
