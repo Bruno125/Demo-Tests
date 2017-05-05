@@ -1,5 +1,8 @@
 package com.brunoaybar.demotests
 
+import com.brunoaybar.demotests.model.FandangoMovieRepo
+import com.brunoaybar.demotests.model.Movie
+import com.brunoaybar.demotests.model.MovieRepository
 import org.amshove.kluent.shouldEqual
 import org.junit.Test
 

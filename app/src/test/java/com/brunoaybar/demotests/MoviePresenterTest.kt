@@ -1,5 +1,9 @@
 package com.brunoaybar.demotests
 
+import com.brunoaybar.demotests.model.Movie
+import com.brunoaybar.demotests.model.MovieRepository
+import com.brunoaybar.demotests.presenter.FandangoMoviePresenter
+import com.brunoaybar.demotests.presenter.MovieView
 import com.nhaarman.mockito_kotlin.any
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.argumentCaptor
@@ -32,7 +36,7 @@ class MoviePresenterTest{
 
     @Test
     fun whenMovieIsSelected_AndFetchFromRepositorySuccess_ThenDisplaysInView(){
-        val movie = Movie("1","name")
+        val movie = Movie("1","name","https://test.com")
         //Movie is selected and presenter is notified
         presenter.selectMovie(movie.id)
 
